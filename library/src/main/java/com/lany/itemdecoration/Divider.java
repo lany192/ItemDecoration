@@ -1,5 +1,6 @@
 package com.lany.itemdecoration;
 
+import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
 import lombok.Getter;
@@ -8,12 +9,12 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Divider {
-    private SideLine left;
-    private SideLine top;
-    private SideLine right;
-    private SideLine bottom;
+    private Border left;
+    private Border top;
+    private Border right;
+    private Border bottom;
 
-    private Divider(SideLine left, SideLine top, SideLine right, SideLine bottom) {
+    private Divider(Border left, Border top, Border right, Border bottom) {
         super();
         this.left = left;
         this.top = top;
@@ -22,45 +23,45 @@ public class Divider {
     }
 
     public static class Builder {
-        private SideLine left;
-        private SideLine top;
-        private SideLine right;
-        private SideLine bottom;
+        private Border left;
+        private Border top;
+        private Border right;
+        private Border bottom;
 
-        public Builder setLeft(boolean isHave, @ColorInt int color, float widthDp, float startPaddingDp, float endPaddingDp) {
-            this.left = new SideLine(isHave, color, widthDp, startPaddingDp, endPaddingDp);
+        public Builder setLeft(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
+            this.left = new Border(isHave, color, width, startPadding, endPadding);
             return this;
         }
 
-        public Builder setTop(boolean isHave, @ColorInt int color, float widthDp, float startPaddingDp, float endPaddingDp) {
-            this.top = new SideLine(isHave, color, widthDp, startPaddingDp, endPaddingDp);
+        public Builder setTop(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
+            this.top = new Border(isHave, color, width, startPadding, endPadding);
             return this;
         }
 
-        public Builder setRight(boolean isHave, @ColorInt int color, float widthDp, float startPaddingDp, float endPaddingDp) {
-            this.right = new SideLine(isHave, color, widthDp, startPaddingDp, endPaddingDp);
+        public Builder setRight(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
+            this.right = new Border(isHave, color, width, startPadding, endPadding);
             return this;
         }
 
-        public Builder setBottom(boolean isHave, @ColorInt int color, float widthDp, float startPaddingDp, float endPaddingDp) {
-            this.bottom = new SideLine(isHave, color, widthDp, startPaddingDp, endPaddingDp);
+        public Builder setBottom(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
+            this.bottom = new Border(isHave, color, width, startPadding, endPadding);
             return this;
         }
 
         public Divider build() {
             //提供一个默认不显示的sideline，防止空指针
-            SideLine defaultSideLine = new SideLine(false, 0x00000000, 0, 0, 0);
+            Border defaultBorder = new Border(false, Color.TRANSPARENT, 0, 0, 0);
             if (left == null) {
-                left = defaultSideLine;
+                left = defaultBorder;
             }
             if (top == null) {
-                top = defaultSideLine;
+                top = defaultBorder;
             }
             if (right == null) {
-                right = defaultSideLine;
+                right = defaultBorder;
             }
             if (bottom == null) {
-                bottom = defaultSideLine;
+                bottom = defaultBorder;
             }
             return new Divider(left, top, right, bottom);
         }

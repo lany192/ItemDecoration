@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lany.box.activity.BaseActivity;
 import com.lany.box.adapter.ItemViewHolder;
-import com.lany.itemdecoration.GridDivider;
+import com.lany.itemdecoration.GridItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,6 @@ public class GridLayoutManagerActivity extends BaseActivity {
                 helper.setText(R.id.textView, item);
             }
         });
-        recyclerView.addItemDecoration(new GridDivider(manager));
+        recyclerView.addItemDecoration(new GridItemDecoration(manager));
     }
 }

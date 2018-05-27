@@ -1,6 +1,7 @@
 package com.lany.itemdecoration;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.ColorInt;
@@ -190,7 +191,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public Divider getDivider(int position) {
         //这个是默认的效果
         return new Divider.Builder()
-                .setBottom(true, 0x00000000, 1, 0, 0)
+                .setBottom(true,  Color.TRANSPARENT, 1, 0, 0)
                 .build();
     }
 }

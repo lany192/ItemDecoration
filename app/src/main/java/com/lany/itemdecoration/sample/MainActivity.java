@@ -38,6 +38,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.button4:
                 startActivity(new Intent(self, GridLayoutManager2Activity.class));
                 break;
+            case R.id.button5:
+                startActivity(new Intent(self, LinearLayoutManager2Activity.class));
+                break;
             default:
                 break;
         }

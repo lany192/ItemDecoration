@@ -7,35 +7,47 @@ import android.util.TypedValue;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 边
+ */
 @Setter
 @Getter
-public class SideLine {
+public class Border {
     /**
      * 是否存在这个边
      */
     public boolean isExist;
     /**
-     * 分割线的颜色
+     * 边的颜色
      **/
     @ColorInt
     public int color;
     /**
-     * 单位dp
+     * 边的宽度，单位dp
      */
     public float width;
     /**
      * startPadding,分割线起始的padding，水平方向左为start，垂直方向上为start
-     * endPadding,分割线尾部的padding，水平方向右为end，垂直方向下为end
      */
     public float startPadding;
+    /**
+     * endPadding,分割线尾部的padding，水平方向右为end，垂直方向下为end
+     */
     public float endPadding;
 
-    public SideLine(boolean isExist, @ColorInt int color, float widthDp, float startPaddingDp, float endPaddingDp) {
+    /**
+     * @param isExist      是否存在这个边
+     * @param color        边的颜色
+     * @param width        边的宽度，单位dp
+     * @param startPadding 起始的padding，单位dp
+     * @param endPadding   尾部的padding，单位dp
+     */
+    public Border(boolean isExist, @ColorInt int color, float width, float startPadding, float endPadding) {
         this.isExist = isExist;
         this.color = color;
-        this.width = widthDp;
-        this.startPadding = startPaddingDp;
-        this.endPadding = endPaddingDp;
+        this.width = width;
+        this.startPadding = startPadding;
+        this.endPadding = endPadding;
     }
 
     public int getWidth() {

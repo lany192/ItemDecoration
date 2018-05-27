@@ -3,7 +3,7 @@ package com.lany.itemdecoration;
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.GridLayoutManager;
 
-public class GridDivider extends DividerItemDecoration {
+public class GridItemDecoration extends DividerItemDecoration {
     private int spanCount;
     private int width = 2;
     /**
@@ -12,11 +12,11 @@ public class GridDivider extends DividerItemDecoration {
     @ColorInt
     private int color = 0x00000000;
 
-    public GridDivider() {
+    public GridItemDecoration() {
 
     }
 
-    public GridDivider(int spanCount, int width, int color) {
+    public GridItemDecoration(int spanCount, int width, int color) {
         this.spanCount = spanCount;
         if (spanCount < 2) {
             throw new RuntimeException("spanCount min value is 2");
@@ -25,30 +25,36 @@ public class GridDivider extends DividerItemDecoration {
         this.color = color;
     }
 
-    public GridDivider(GridLayoutManager manager) {
+    public GridItemDecoration(GridLayoutManager manager) {
         this.spanCount = manager.getSpanCount();
         if (spanCount < 2) {
             throw new RuntimeException("spanCount min value is 2");
         }
     }
 
-    public GridDivider setSpanCount(int spanCount) {
+    public GridItemDecoration setSpanCount(int spanCount) {
         this.spanCount = spanCount;
+        if (spanCount < 2) {
+            throw new RuntimeException("spanCount min value is 2");
+        }
         return this;
     }
 
-    public GridDivider setWidth(int width) {
+    public GridItemDecoration setWidth(int width) {
         this.width = width;
         return this;
     }
 
-    public GridDivider setColor(@ColorInt int color) {
+    public GridItemDecoration setColor(@ColorInt int color) {
         this.color = color;
         return this;
     }
 
     @Override
     public Divider getDivider(int itemPosition) {
+        if (spanCount < 2) {
+            throw new RuntimeException("spanCount min value is 2");
+        }
         int remainder = itemPosition % spanCount;
         if (remainder == spanCount - 1) {
             //最后一个只显示bottom
