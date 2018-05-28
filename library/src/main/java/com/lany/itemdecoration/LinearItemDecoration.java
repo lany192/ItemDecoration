@@ -3,6 +3,9 @@ package com.lany.itemdecoration;
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 
+/**
+ * 适用于LinearLayoutManager
+ */
 public class LinearItemDecoration extends ItemDecoration {
     /**
      * 分割线宽度，默认是1dp

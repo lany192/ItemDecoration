@@ -2,7 +2,9 @@ package com.lany.itemdecoration;
 
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.GridLayoutManager;
-
+/**
+ * 适用于GridLayoutManager
+ */
 public class GridItemDecoration extends ItemDecoration {
     private int spanCount;
     private int width = 2;
