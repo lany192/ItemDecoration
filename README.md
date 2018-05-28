@@ -27,3 +27,43 @@
             .setShowBorder(false)
             .setWidth(4)
             .setColor(Color.RED));
+
+###不同item使用不同的分割线，复现 public Divider getDivider(int itemPosition)
+
+    recyclerView.addItemDecoration(new ItemDecoration() {
+
+            @Override
+            public Divider getDivider(int itemPosition) {
+                Divider divider = null;
+                if ((itemPosition >= 1 && itemPosition <= 6) || itemPosition == 9 || itemPosition == 10) {
+                    divider = new Divider.Builder()
+                            .setBottom(Color.BLACK, 6)
+                            .build();
+                } else if (itemPosition == 0 || itemPosition == 7 || itemPosition == 8) {
+                    divider = new Divider.Builder()
+                            .setRight(Color.BLACK, 6)
+                            .setBottom(Color.BLACK, 6)
+                            .build();
+                } else if (itemPosition > 10 && itemPosition < 22) {
+                    switch ((itemPosition - 10) % 4) {
+                        case 1:
+                        case 2:
+                        case 3:
+                            divider = new Divider.Builder()
+                                    .setRight(Color.BLACK, 6)
+                                    .setBottom(Color.BLACK, 6)
+                                    .build();
+                            break;
+                        case 0:
+                            divider = new Divider.Builder()
+                                    .setBottom(Color.BLACK, 6)
+                                    .build();
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                return divider;
+            }
+
+        });
