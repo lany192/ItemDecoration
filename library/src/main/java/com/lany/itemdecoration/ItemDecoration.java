@@ -191,7 +191,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     public Divider getDivider(int position) {
         //这个是默认的效果
         return new Divider.Builder()
-                .setBottom(true,  Color.TRANSPARENT, 0.5f, 0, 0)
+                .setBottom(true, Color.TRANSPARENT, 0.5f, 0, 0)
                 .build();
     }
 }

@@ -27,7 +27,7 @@ public class GridLayoutManager2Activity extends BaseActivity {
         for (int i = 0; i < 77; i++) {
             items.add("item" + i);
         }
-        GridLayoutManager manager = new GridLayoutManager(this, 3);
+        GridLayoutManager manager = new GridLayoutManager(this, 4);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(new BaseQuickAdapter<String, ItemViewHolder>(R.layout.item_simple, items) {
 
@@ -36,7 +36,7 @@ public class GridLayoutManager2Activity extends BaseActivity {
                 helper.setText(R.id.textView, item);
             }
         });
-        recyclerView.addItemDecoration(new GridItemDecoration(manager).setColor(Color.BLACK).setWidth(4));
+        recyclerView.addItemDecoration(new GridItemDecoration(manager).setShowBorder(true).setColor(Color.RED).setWidth(2));
     }
 
 }

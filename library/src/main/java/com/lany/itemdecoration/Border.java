@@ -4,9 +4,20 @@ import android.content.res.Resources;
 import android.support.annotation.ColorInt;
 import android.util.TypedValue;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * 边
  */
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Border {
     /**
      * 是否存在这个边
@@ -30,21 +41,6 @@ public class Border {
      */
     public float endPadding;
 
-    /**
-     * @param isExist      是否存在这个边
-     * @param color        边的颜色
-     * @param width        边的宽度，单位dp
-     * @param startPadding 起始的padding，单位dp
-     * @param endPadding   尾部的padding，单位dp
-     */
-    public Border(boolean isExist, @ColorInt int color, float width, float startPadding, float endPadding) {
-        this.isExist = isExist;
-        this.color = color;
-        this.width = width;
-        this.startPadding = startPadding;
-        this.endPadding = endPadding;
-    }
-
     public int getWidth() {
         if (isExist) {
             return dp2px(width);
@@ -66,33 +62,5 @@ public class Border {
      */
     private int dp2px(float dpValue) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, Resources.getSystem().getDisplayMetrics());
-    }
-
-    public boolean isExist() {
-        return isExist;
-    }
-
-    public void setExist(boolean exist) {
-        isExist = exist;
-    }
-
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
-
-    public void setWidth(float width) {
-        this.width = width;
-    }
-
-    public void setStartPadding(float startPadding) {
-        this.startPadding = startPadding;
-    }
-
-    public void setEndPadding(float endPadding) {
-        this.endPadding = endPadding;
     }
 }

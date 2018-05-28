@@ -2,17 +2,23 @@ package com.lany.itemdecoration;
 
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.GridLayoutManager;
+
 /**
  * 适用于GridLayoutManager
  */
 public class GridItemDecoration extends ItemDecoration {
     private int spanCount;
-    private int width = 2;
+    private int width = 1;
     /**
      * 默认透明色
      */
     @ColorInt
     private int color = 0x00000000;
+
+    /**
+     * 是否显示四周的边
+     */
+    private boolean isShowBorder = false;
 
     public GridItemDecoration() {
 
@@ -46,20 +52,57 @@ public class GridItemDecoration extends ItemDecoration {
         return this;
     }
 
+    public GridItemDecoration setShowBorder(boolean isShowBorder) {
+        this.isShowBorder = isShowBorder;
+        return this;
+    }
+
     @Override
-    public Divider getDivider(int itemPosition) {
+    public Divider getDivider(int position) {
         checkSpanCount(spanCount);
-        int remainder = itemPosition % spanCount;
-        if (remainder == spanCount - 1) {
-            //最后一个只显示bottom
-            return new Divider.Builder()
-                    .setBottom(color, width)
-                    .build();
+        int remainder = position % spanCount;
+        if (isShowBorder) {//要显示四周的边
+            if (remainder == 0) {
+                if (position < spanCount) {
+                    return new Divider.Builder()
+                            .setTop(color, width)
+                            .setLeft(color, width)
+                            .setRight(color, width)
+                            .setBottom(color, width)
+                            .build();
+                } else {
+                    return new Divider.Builder()
+                            .setLeft(color, width)
+                            .setRight(color, width)
+                            .setBottom(color, width)
+                            .build();
+                }
+            } else {
+                if (position < spanCount) {
+                    return new Divider.Builder()
+                            .setTop(color, width)
+                            .setRight(color, width)
+                            .setBottom(color, width)
+                            .build();
+                } else {
+                    return new Divider.Builder()
+                            .setRight(color, width)
+                            .setBottom(color, width)
+                            .build();
+                }
+            }
         } else {
-            return new Divider.Builder()
-                    .setRight(color, width)
-                    .setBottom(color, width)
-                    .build();
+            if (remainder == spanCount - 1) {
+                //最后一个只显示bottom
+                return new Divider.Builder()
+                        .setBottom(color, width)
+                        .build();
+            } else {
+                return new Divider.Builder()
+                        .setRight(color, width)
+                        .setBottom(color, width)
+                        .build();
+            }
         }
     }
 

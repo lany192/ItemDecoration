@@ -1,5 +1,6 @@
 package com.lany.itemdecoration.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +36,6 @@ public class GridLayoutManagerActivity extends BaseActivity {
                 helper.setText(R.id.textView, item);
             }
         });
-        recyclerView.addItemDecoration(new GridItemDecoration(manager));
+        recyclerView.addItemDecoration(new GridItemDecoration(manager).setColor(Color.RED));
     }
 }

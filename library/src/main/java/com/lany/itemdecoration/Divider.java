@@ -3,10 +3,17 @@ package com.lany.itemdecoration;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
 
 /**
  * 分割线
  */
+@Setter
+@Getter
+@AllArgsConstructor
 public class Divider {
     /**
      * 左边
@@ -25,51 +32,33 @@ public class Divider {
      */
     private Border bottom;
 
-    public Divider(Border left, Border top, Border right, Border bottom) {
-        super();
-        this.left = left;
-        this.top = top;
-        this.right = right;
-        this.bottom = bottom;
-    }
-
-    public Border getLeft() {
-        return left;
-    }
-
-    public void setLeft(Border left) {
-        this.left = left;
-    }
-
-    public Border getTop() {
-        return top;
-    }
-
-    public void setTop(Border top) {
-        this.top = top;
-    }
-
-    public Border getRight() {
-        return right;
-    }
-
-    public void setRight(Border right) {
-        this.right = right;
-    }
-
-    public Border getBottom() {
-        return bottom;
-    }
-
-    public void setBottom(Border bottom) {
-        this.bottom = bottom;
-    }
-
     public static class Builder {
         private Border left;
         private Border top;
         private Border right;
         private Border bottom;
+
+        /**
+         * 设置左边的边
+         *
+         * @param color 边的颜色
+         * @return 当前分割线
+         */
+        public Builder setLeftColor(@ColorInt int color) {
+            this.left = new Border(true, color, 0.5f, 0, 0);
+            return this;
+        }
+
+        /**
+         * 设置左边的边
+         *
+         * @param width 边的宽度
+         * @return 当前分割线
+         */
+        public Builder setLeftWidth(float width) {
+            this.left = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            return this;
+        }
 
         /**
          * 设置左边的边
@@ -109,6 +98,28 @@ public class Divider {
          */
         public Builder setLeft(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
             this.left = new Border(isHave, color, width, startPadding, endPadding);
+            return this;
+        }
+
+        /**
+         * 设置上边的边
+         *
+         * @param color 边的颜色
+         * @return 当前分割线
+         */
+        public Builder setTopColor(@ColorInt int color) {
+            this.top = new Border(true, color, 0.5f, 0, 0);
+            return this;
+        }
+
+        /**
+         * 设置上边的边
+         *
+         * @param width 边的宽度
+         * @return 当前分割线
+         */
+        public Builder setTopWidth(float width) {
+            this.top = new Border(true, Color.TRANSPARENT, width, 0, 0);
             return this;
         }
 
@@ -157,6 +168,28 @@ public class Divider {
          * 设置右边的边
          *
          * @param color 边的颜色
+         * @return 当前分割线
+         */
+        public Builder setRightColor(@ColorInt int color) {
+            this.right = new Border(true, color, 0.5f, 0, 0);
+            return this;
+        }
+
+        /**
+         * 设置右边的边
+         *
+         * @param width 边的宽度
+         * @return 当前分割线
+         */
+        public Builder setRightWidth(float width) {
+            this.right = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            return this;
+        }
+
+        /**
+         * 设置右边的边
+         *
+         * @param color 边的颜色
          * @param width 边的宽度
          * @return 当前分割线
          */
@@ -191,6 +224,29 @@ public class Divider {
          */
         public Builder setRight(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
             this.right = new Border(isHave, color, width, startPadding, endPadding);
+            return this;
+        }
+
+        /**
+         * 设置下边的边
+         *
+         * @param color 边的颜色
+         * @return 当前分割线
+         */
+        public Builder setBottomColor(@ColorInt int color) {
+            this.bottom = new Border(true, color, 0.5f, 0, 0);
+            return this;
+        }
+
+
+        /**
+         * 设置下边的边
+         *
+         * @param width 边的宽度
+         * @return 当前分割线
+         */
+        public Builder setBottomWidth(float width) {
+            this.bottom = new Border(true, Color.TRANSPARENT, width, 0, 0);
             return this;
         }
 
