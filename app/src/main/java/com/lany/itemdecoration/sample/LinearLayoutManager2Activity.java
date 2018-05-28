@@ -32,7 +32,7 @@ public class LinearLayoutManager2Activity extends BaseActivity {
         recyclerView.setLayoutManager(manager);
         recyclerView.addItemDecoration(new LinearItemDecoration(LinearLayoutManager.HORIZONTAL)
                 .setColor(Color.RED)
-                .setWidth(8));
+                .setWidth(4));
         recyclerView.setAdapter(new BaseQuickAdapter<String, ItemViewHolder>(R.layout.item_simple_horizontal, items) {
 
             @Override

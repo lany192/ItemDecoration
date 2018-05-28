@@ -3,7 +3,7 @@ package com.lany.itemdecoration;
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.GridLayoutManager;
 
-public class GridItemDecoration extends DividerItemDecoration {
+public class GridItemDecoration extends ItemDecoration {
     private int spanCount;
     private int width = 2;
     /**
@@ -18,25 +18,19 @@ public class GridItemDecoration extends DividerItemDecoration {
 
     public GridItemDecoration(int spanCount, int width, int color) {
         this.spanCount = spanCount;
-        if (spanCount < 2) {
-            throw new RuntimeException("spanCount min value is 2");
-        }
+        checkSpanCount(spanCount);
         this.width = width;
         this.color = color;
     }
 
     public GridItemDecoration(GridLayoutManager manager) {
         this.spanCount = manager.getSpanCount();
-        if (spanCount < 2) {
-            throw new RuntimeException("spanCount min value is 2");
-        }
+        checkSpanCount(spanCount);
     }
 
     public GridItemDecoration setSpanCount(int spanCount) {
         this.spanCount = spanCount;
-        if (spanCount < 2) {
-            throw new RuntimeException("spanCount min value is 2");
-        }
+        checkSpanCount(spanCount);
         return this;
     }
 
@@ -52,20 +46,24 @@ public class GridItemDecoration extends DividerItemDecoration {
 
     @Override
     public Divider getDivider(int itemPosition) {
-        if (spanCount < 2) {
-            throw new RuntimeException("spanCount min value is 2");
-        }
+        checkSpanCount(spanCount);
         int remainder = itemPosition % spanCount;
         if (remainder == spanCount - 1) {
             //最后一个只显示bottom
             return new Divider.Builder()
-                    .setBottom(true, color, width, 0, 0)
+                    .setBottom(color, width)
                     .build();
         } else {
             return new Divider.Builder()
-                    .setRight(true, color, width, 0, 0)
-                    .setBottom(true, color, width, 0, 0)
+                    .setRight(color, width)
+                    .setBottom(color, width)
                     .build();
+        }
+    }
+
+    private void checkSpanCount(int spanCount) {
+        if (spanCount < 2) {
+            throw new RuntimeException("SpanCount minimum is 2");
         }
     }
 }

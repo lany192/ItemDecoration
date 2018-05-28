@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lany.box.activity.BaseActivity;
 import com.lany.box.adapter.ItemViewHolder;
 import com.lany.itemdecoration.Divider;
-import com.lany.itemdecoration.DividerItemDecoration;
+import com.lany.itemdecoration.ItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public class GridLayoutManager1Activity extends BaseActivity {
         });
         recyclerView.setLayoutManager(manager);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration() {
+        recyclerView.addItemDecoration(new ItemDecoration() {
 
             @Override
             public Divider getDivider(int itemPosition) {

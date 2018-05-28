@@ -3,7 +3,7 @@ package com.lany.itemdecoration;
 import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 
-public class LinearItemDecoration extends DividerItemDecoration {
+public class LinearItemDecoration extends ItemDecoration {
     /**
      * 分割线宽度，默认是1dp
      */
@@ -60,11 +60,11 @@ public class LinearItemDecoration extends DividerItemDecoration {
         }
         if (orientation != RecyclerView.VERTICAL) {
             return new Divider.Builder()
-                    .setRight(true, color, width, 0, 0)
+                    .setRight(color, width)
                     .build();
         } else {
             return new Divider.Builder()
-                    .setBottom(true, color, width, 0, 0)
+                    .setBottom(color, width)
                     .build();
         }
     }

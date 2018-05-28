@@ -8,10 +8,10 @@ import android.support.annotation.ColorInt;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+public class ItemDecoration extends RecyclerView.ItemDecoration {
     private Paint mPaint;
 
-    public DividerItemDecoration() {
+    public ItemDecoration() {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.FILL);
     }
@@ -191,7 +191,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     public Divider getDivider(int position) {
         //这个是默认的效果
         return new Divider.Builder()
-                .setBottom(true,  Color.TRANSPARENT, 1, 0, 0)
+                .setBottom(true,  Color.TRANSPARENT, 0.5f, 0, 0)
                 .build();
     }
 }

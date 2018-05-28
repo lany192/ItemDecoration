@@ -1,5 +1,6 @@
 package com.lany.itemdecoration.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lany.box.activity.BaseActivity;
 import com.lany.box.adapter.ItemViewHolder;
 import com.lany.itemdecoration.Divider;
-import com.lany.itemdecoration.DividerItemDecoration;
+import com.lany.itemdecoration.ItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,45 +30,43 @@ public class LinearLayoutManagerActivity extends BaseActivity {
             items.add("item" + i);
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new DividerItemDecoration() {
+        recyclerView.addItemDecoration(new ItemDecoration() {
 
             @Override
             public Divider getDivider(int itemPosition) {
                 switch (itemPosition) {
                     case 0:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff228B22, 2, 0, 0)
+                                .setBottom(Color.YELLOW, 2)
                                 .build();
                     case 1:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff666666, 2, 0, 0)
+                                .setBottom(Color.BLACK, 2)
                                 .build();
                     case 2:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff228B22, 4, 0, 0)
+                                .setBottom(Color.RED, 4)
                                 .build();
                     case 3:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff228B22, 2, 16, 16)
+                                .setBottom(Color.RED, 4, 16, 16)
                                 .build();
                     case 4:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff228B22, 2, 16, 32)
+                                .setBottom(Color.RED, 2, 16, 32)
                                 .build();
                     case 5:
                         return new Divider.Builder()
-                                .setBottom(true, 0xff228B22, 2, 0, 0)
+                                .setBottom(Color.RED, 2)
                                 .build();
                     case 6:
                         return new Divider.Builder()
-                                .setLeft(true, 0xff228B22, 3, 0, 0)
-                                .setRight(true, 0xff228B22, 8, 0, 0)
-                                .setBottom(true, 0xff228B22, 6, 0, 0)
+                                .setLeft(Color.RED, 3)
+                                .setRight(Color.RED, 8)
+                                .setBottom(Color.RED, 6)
                                 .build();
                     default:
-                        return new Divider.Builder()
-                                .setBottom(true, 0xff666666, 2, 0, 0)
-                                .build();
+                        return super.getDivider(itemPosition);
                 }
             }
         });
