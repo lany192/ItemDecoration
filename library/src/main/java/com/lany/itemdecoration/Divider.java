@@ -3,16 +3,10 @@ package com.lany.itemdecoration;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 分割线
  */
-@Setter
-@Getter
-@AllArgsConstructor
 public class Divider {
     /**
      * 左边
@@ -30,6 +24,46 @@ public class Divider {
      * 下边
      */
     private Border bottom;
+
+    public Divider(Border left, Border top, Border right, Border bottom) {
+        super();
+        this.left = left;
+        this.top = top;
+        this.right = right;
+        this.bottom = bottom;
+    }
+
+    public Border getLeft() {
+        return left;
+    }
+
+    public void setLeft(Border left) {
+        this.left = left;
+    }
+
+    public Border getTop() {
+        return top;
+    }
+
+    public void setTop(Border top) {
+        this.top = top;
+    }
+
+    public Border getRight() {
+        return right;
+    }
+
+    public void setRight(Border right) {
+        this.right = right;
+    }
+
+    public Border getBottom() {
+        return bottom;
+    }
+
+    public void setBottom(Border bottom) {
+        this.bottom = bottom;
+    }
 
     public static class Builder {
         private Border left;

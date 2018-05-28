@@ -4,14 +4,9 @@ import android.content.res.Resources;
 import android.support.annotation.ColorInt;
 import android.util.TypedValue;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * 边
  */
-@Setter
-@Getter
 public class Border {
     /**
      * 是否存在这个边
@@ -71,5 +66,33 @@ public class Border {
      */
     private int dp2px(float dpValue) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, Resources.getSystem().getDisplayMetrics());
+    }
+
+    public boolean isExist() {
+        return isExist;
+    }
+
+    public void setExist(boolean exist) {
+        isExist = exist;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
+    public void setStartPadding(float startPadding) {
+        this.startPadding = startPadding;
+    }
+
+    public void setEndPadding(float endPadding) {
+        this.endPadding = endPadding;
     }
 }

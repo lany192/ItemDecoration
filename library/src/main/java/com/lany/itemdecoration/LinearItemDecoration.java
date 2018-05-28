@@ -20,10 +20,10 @@ public class LinearItemDecoration extends ItemDecoration {
      * 方向，默认是纵向
      */
     @RecyclerView.Orientation
-    private int orientation = RecyclerView.VERTICAL;
+    private int orientation;
 
     public LinearItemDecoration() {
-
+        orientation = RecyclerView.VERTICAL;
     }
 
     public LinearItemDecoration(@RecyclerView.Orientation int orientation) {
@@ -39,6 +39,7 @@ public class LinearItemDecoration extends ItemDecoration {
     public LinearItemDecoration(int width, @ColorInt int color) {
         this.width = width;
         this.color = color;
+        this.orientation = RecyclerView.VERTICAL;
     }
 
     public LinearItemDecoration setWidth(int width) {
