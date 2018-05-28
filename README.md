@@ -28,9 +28,9 @@
             .setWidth(4)
             .setColor(Color.RED));
 
-###不同item使用不同的分割线，复现 public Divider getDivider(int itemPosition)
+###不同item使用不同的分割线，复现getDivider(int itemPosition)
 
-    recyclerView.addItemDecoration(new ItemDecoration() {
+        recyclerView.addItemDecoration(new ItemDecoration() {
 
             @Override
             public Divider getDivider(int itemPosition) {
