@@ -9,26 +9,26 @@
             maven { url 'https://jitpack.io' }
         }
     }
-#
+#  
     dependencies {
         implementation 'com.github.lany192:ItemDecoration:1.1.0'
     }
  
-#使用
-###LinearLayoutManager
+# 使用
+### LinearLayoutManager
 
     recyclerView.addItemDecoration(new LinearItemDecoration(LinearLayoutManager.HORIZONTAL)
                     .setColor(Color.RED)
                     .setWidth(4));
                     
-###GridLayoutManager
+### GridLayoutManager
     recyclerView.addItemDecoration(new GridItemDecoration()
             .setSpanCount(manager.getSpanCount())
             .setShowBorder(false)
             .setWidth(4)
             .setColor(Color.RED));
 
-###不同item使用不同的分割线，复现getDivider(int itemPosition)
+### 不同item使用不同的分割线，复现getDivider(int itemPosition)
 
         recyclerView.addItemDecoration(new ItemDecoration() {
 
