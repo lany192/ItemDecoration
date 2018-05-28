@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+
     defaultConfig {
         applicationId "com.lany.itemdecoration.sample"
         minSdkVersion 16
@@ -30,7 +30,7 @@ dependencies {
     implementation project(':library')
     compileOnly 'org.projectlombok:lombok:1.16.20'
     annotationProcessor 'org.projectlombok:lombok:1.16.20'
-    implementation 'com.github.lany192:Box:2.0.3'
+    implementation 'com.github.lany192:Box:2.0.5'
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
