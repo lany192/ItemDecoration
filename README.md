@@ -11,7 +11,7 @@
     }
 #  
     dependencies {
-        implementation 'com.github.lany192:ItemDecoration:1.1.0'
+        implementation 'com.github.lany192:ItemDecoration:1.1.1'
     }
  
 # 使用
