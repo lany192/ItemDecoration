@@ -22,6 +22,12 @@ public class LinearItemDecoration extends ItemDecoration {
     @RecyclerView.Orientation
     private int orientation;
 
+    /**
+     * 分割线padding
+     */
+    private int padding;
+
+
     public LinearItemDecoration() {
         orientation = RecyclerView.VERTICAL;
     }
@@ -47,6 +53,11 @@ public class LinearItemDecoration extends ItemDecoration {
         return this;
     }
 
+    public LinearItemDecoration setPadding(int padding) {
+        this.padding = padding;
+        return this;
+    }
+
     public LinearItemDecoration setColor(@ColorInt int color) {
         this.color = color;
         return this;
@@ -64,11 +75,11 @@ public class LinearItemDecoration extends ItemDecoration {
         }
         if (orientation != RecyclerView.VERTICAL) {
             return new Divider.Builder()
-                    .setRight(color, width)
+                    .setRight(color, width, padding, padding)
                     .build();
         } else {
             return new Divider.Builder()
-                    .setBottom(color, width)
+                    .setBottom(color, width, padding, padding)
                     .build();
         }
     }
