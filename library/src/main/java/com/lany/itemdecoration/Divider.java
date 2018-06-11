@@ -45,7 +45,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setLeftColor(@ColorInt int color) {
-            this.left = new Border(true, color, 0.5f, 0, 0);
+            this.left = Border.builder().isExist(true).color(color).width(0.5f).build();
             return this;
         }
 
@@ -56,7 +56,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setLeftWidth(float width) {
-            this.left = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            this.left = Border.builder().isExist(true).color(Color.TRANSPARENT).width(width).build();
             return this;
         }
 
@@ -68,7 +68,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setLeft(@ColorInt int color, float width) {
-            this.left = new Border(true, color, width, 0, 0);
+            this.left = Border.builder().isExist(true).color(color).width(width).build();
             return this;
         }
 
@@ -82,7 +82,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setLeft(@ColorInt int color, float width, float startPadding, float endPadding) {
-            this.left = new Border(true, color, width, startPadding, endPadding);
+            this.left = Border.builder().isExist(true).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -97,18 +97,18 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setLeft(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
-            this.left = new Border(isHave, color, width, startPadding, endPadding);
+            this.left = Border.builder().isExist(isHave).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
         /**
          * 设置左边的边
          *
-         * @param leftBorder 边
+         * @param border 边
          * @return 当前分割线
          */
-        public Builder setLeft(Border leftBorder) {
-            this.left = leftBorder;
+        public Builder setLeft(Border border) {
+            this.left = border;
             return this;
         }
 
@@ -119,7 +119,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setTopColor(@ColorInt int color) {
-            this.top = new Border(true, color, 0.5f, 0, 0);
+            this.top = Border.builder().isExist(true).color(color).width(0.5f).build();
             return this;
         }
 
@@ -130,7 +130,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setTopWidth(float width) {
-            this.top = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            this.top = Border.builder().isExist(true).color(Color.TRANSPARENT).width(width).build();
             return this;
         }
 
@@ -142,7 +142,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setTop(@ColorInt int color, float width) {
-            this.top = new Border(true, color, width, 0, 0);
+            this.top = Border.builder().isExist(true).color(color).width(width).build();
             return this;
         }
 
@@ -156,7 +156,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setTop(@ColorInt int color, float width, float startPadding, float endPadding) {
-            this.top = new Border(true, color, width, startPadding, endPadding);
+            this.top = Border.builder().isExist(true).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -171,7 +171,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setTop(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
-            this.top = new Border(isHave, color, width, startPadding, endPadding);
+            this.top = Border.builder().isExist(isHave).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -179,11 +179,11 @@ public class Divider {
         /**
          * 设置上边的边
          *
-         * @param topBorder 边
+         * @param border 边
          * @return 当前分割线
          */
-        public Builder setTop(Border topBorder) {
-            this.top = topBorder;
+        public Builder setTop(Border border) {
+            this.top = border;
             return this;
         }
 
@@ -194,7 +194,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setRightColor(@ColorInt int color) {
-            this.right = new Border(true, color, 0.5f, 0, 0);
+            this.right = Border.builder().isExist(true).color(color).width(0.5f).build();
             return this;
         }
 
@@ -205,7 +205,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setRightWidth(float width) {
-            this.right = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            this.right = Border.builder().isExist(true).color(Color.TRANSPARENT).width(width).build();
             return this;
         }
 
@@ -217,7 +217,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setRight(@ColorInt int color, float width) {
-            this.right = new Border(true, color, width, 0, 0);
+            this.right = Border.builder().isExist(true).color(color).width(width).build();
             return this;
         }
 
@@ -231,7 +231,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setRight(@ColorInt int color, float width, float startPadding, float endPadding) {
-            this.right = new Border(true, color, width, startPadding, endPadding);
+            this.right = Border.builder().isExist(true).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -246,7 +246,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setRight(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
-            this.right = new Border(isHave, color, width, startPadding, endPadding);
+            this.right = Border.builder().isExist(isHave).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -254,11 +254,11 @@ public class Divider {
         /**
          * 设置右边的边
          *
-         * @param rightBorder 边
+         * @param border 边
          * @return 当前分割线
          */
-        public Builder setRight(Border rightBorder) {
-            this.right = rightBorder;
+        public Builder setRight(Border border) {
+            this.right = border;
             return this;
         }
 
@@ -269,7 +269,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setBottomColor(@ColorInt int color) {
-            this.bottom = new Border(true, color, 0.5f, 0, 0);
+            this.bottom = Border.builder().isExist(true).color(color).width(0.5f).build();
             return this;
         }
 
@@ -281,7 +281,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setBottomWidth(float width) {
-            this.bottom = new Border(true, Color.TRANSPARENT, width, 0, 0);
+            this.bottom = Border.builder().isExist(true).color(Color.TRANSPARENT).width(width).build();
             return this;
         }
 
@@ -293,7 +293,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setBottom(@ColorInt int color, float width) {
-            this.bottom = new Border(true, color, width, 0, 0);
+            this.bottom = Border.builder().isExist(true).color(color).width(width).build();
             return this;
         }
 
@@ -307,7 +307,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setBottom(@ColorInt int color, float width, float startPadding, float endPadding) {
-            this.bottom = new Border(true, color, width, startPadding, endPadding);
+            this.bottom = Border.builder().isExist(true).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -322,7 +322,7 @@ public class Divider {
          * @return 当前分割线
          */
         public Builder setBottom(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
-            this.bottom = new Border(isHave, color, width, startPadding, endPadding);
+            this.bottom = Border.builder().isExist(isHave).color(color).width(width).startPadding(startPadding).endPadding(endPadding).build();
             return this;
         }
 
@@ -330,11 +330,11 @@ public class Divider {
         /**
          * 设置下边的边
          *
-         * @param bottomBorder 边
+         * @param border 边
          * @return 当前分割线
          */
-        public Builder setBottom(Border bottomBorder) {
-            this.bottom = bottomBorder;
+        public Builder setBottom(Border border) {
+            this.bottom = border;
             return this;
         }
 
@@ -343,7 +343,7 @@ public class Divider {
          */
         public Divider build() {
             //提供一个默认不显示的sideline，防止空指针
-            Border defaultBorder = new Border(false, Color.TRANSPARENT, 0, 0, 0);
+            Border defaultBorder = Border.builder().color(Color.TRANSPARENT).build();
             if (left == null) {
                 left = defaultBorder;
             }
