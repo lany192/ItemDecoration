@@ -74,7 +74,6 @@ public class LinearItemDecoration extends ItemDecoration {
             throw new IllegalArgumentException("invalid orientation:" + orientation);
         }
         Border border = Border.builder()
-                .isExist(true)
                 .color(color)
                 .width(width)
                 .startPadding(padding)

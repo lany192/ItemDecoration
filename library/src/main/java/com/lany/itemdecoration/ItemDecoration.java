@@ -27,25 +27,25 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
             if (divider == null) {
                 divider = new Divider.Builder().build();
             }
-            if (divider.getLeft().isExist()) {
+            if (divider.getLeft() != null) {
                 int lineWidth = divider.getLeft().getWidth();
                 int startPadding = divider.getLeft().getStartPadding();
                 int endPadding = divider.getLeft().getEndPadding();
                 drawChildLeftVertical(child, canvas, divider.getLeft().getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getTop().isExist()) {
+            if (divider.getTop() != null) {
                 int lineWidth = divider.getTop().getWidth();
                 int startPadding = divider.getTop().getStartPadding();
                 int endPadding = divider.getTop().getEndPadding();
                 drawChildTopHorizontal(child, canvas, divider.getTop().getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getRight().isExist()) {
+            if (divider.getRight() != null) {
                 int lineWidth = divider.getRight().getWidth();
                 int startPadding = divider.getRight().getStartPadding();
                 int endPadding = divider.getRight().getEndPadding();
                 drawChildRightVertical(child, canvas, divider.getRight().getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getBottom().isExist()) {
+            if (divider.getBottom() != null) {
                 int lineWidth = divider.getBottom().getWidth();
                 int startPadding = divider.getBottom().getStartPadding();
                 int endPadding = divider.getBottom().getEndPadding();
@@ -189,7 +189,6 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
      */
     public Divider getDivider(int position) {
         Border border = Border.builder()
-                .isExist(true)
                 .color(Color.TRANSPARENT)
                 .width(0.5f)
                 .build();

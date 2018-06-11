@@ -20,10 +20,6 @@ import lombok.Setter;
 @Builder
 public class Border {
     /**
-     * 是否存在这个边
-     */
-    public boolean isExist;
-    /**
      * 边的颜色
      **/
     @ColorInt
@@ -42,11 +38,7 @@ public class Border {
     public float endPadding;
 
     public int getWidth() {
-        if (isExist) {
-            return dp2px(width);
-        } else {
-            return 0;
-        }
+        return dp2px(width);
     }
 
     public int getStartPadding() {

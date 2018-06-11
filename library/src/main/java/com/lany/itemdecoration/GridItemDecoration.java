@@ -62,7 +62,6 @@ public class GridItemDecoration extends ItemDecoration {
         checkSpanCount(spanCount);
         int remainder = position % spanCount;
         Border border = Border.builder()
-                .isExist(true)
                 .color(color)
                 .width(width)
                 .build();
