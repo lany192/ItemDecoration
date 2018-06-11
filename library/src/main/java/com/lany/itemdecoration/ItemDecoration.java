@@ -27,29 +27,33 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
             if (divider == null) {
                 divider = new Divider.Builder().build();
             }
-            if (divider.getLeft() != null) {
-                int lineWidth = divider.getLeft().getWidth();
-                int startPadding = divider.getLeft().getStartPadding();
-                int endPadding = divider.getLeft().getEndPadding();
-                drawChildLeftVertical(child, canvas, divider.getLeft().getColor(), lineWidth, startPadding, endPadding);
+            Border leftBorder = divider.getLeft();
+            if (leftBorder != null) {
+                int lineWidth = leftBorder.getWidth();
+                int startPadding = leftBorder.getStartPadding();
+                int endPadding = leftBorder.getEndPadding();
+                drawChildLeftVertical(child, canvas, leftBorder.getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getTop() != null) {
-                int lineWidth = divider.getTop().getWidth();
-                int startPadding = divider.getTop().getStartPadding();
-                int endPadding = divider.getTop().getEndPadding();
-                drawChildTopHorizontal(child, canvas, divider.getTop().getColor(), lineWidth, startPadding, endPadding);
+            Border topBorder = divider.getTop();
+            if (topBorder != null) {
+                int lineWidth = topBorder.getWidth();
+                int startPadding = topBorder.getStartPadding();
+                int endPadding = topBorder.getEndPadding();
+                drawChildTopHorizontal(child, canvas, topBorder.getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getRight() != null) {
-                int lineWidth = divider.getRight().getWidth();
-                int startPadding = divider.getRight().getStartPadding();
-                int endPadding = divider.getRight().getEndPadding();
-                drawChildRightVertical(child, canvas, divider.getRight().getColor(), lineWidth, startPadding, endPadding);
+            Border rightBorder = divider.getRight();
+            if (rightBorder != null) {
+                int lineWidth = rightBorder.getWidth();
+                int startPadding = rightBorder.getStartPadding();
+                int endPadding = rightBorder.getEndPadding();
+                drawChildRightVertical(child, canvas, rightBorder.getColor(), lineWidth, startPadding, endPadding);
             }
-            if (divider.getBottom() != null) {
-                int lineWidth = divider.getBottom().getWidth();
-                int startPadding = divider.getBottom().getStartPadding();
-                int endPadding = divider.getBottom().getEndPadding();
-                drawChildBottomHorizontal(child, canvas, divider.getBottom().getColor(), lineWidth, startPadding, endPadding);
+            Border bottomBorder = divider.getBottom();
+            if (bottomBorder != null) {
+                int lineWidth = bottomBorder.getWidth();
+                int startPadding = bottomBorder.getStartPadding();
+                int endPadding = bottomBorder.getEndPadding();
+                drawChildBottomHorizontal(child, canvas, bottomBorder.getColor(), lineWidth, startPadding, endPadding);
             }
         }
     }
@@ -112,7 +116,6 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     private void drawChildLeftVertical(View child, Canvas canvas, @ColorInt int color, int lineWidth, int startPadding, int endPadding) {
         int topPadding;
         int bottomPadding;
-
         if (startPadding <= 0) {
             //padding<0当作==0处理
             //上下左右默认分割线的两头都出头一个分割线的宽度，避免十字交叉的时候，交叉点是空白
@@ -174,10 +177,22 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         if (divider == null) {
             divider = new Divider.Builder().build();
         }
-        int left = divider.getLeft().getWidth();
-        int top = divider.getTop().getWidth();
-        int right = divider.getRight().getWidth();
-        int bottom = divider.getBottom().getWidth();
+        int left = 0;
+        int top = 0;
+        int right = 0;
+        int bottom = 0;
+        if (divider.getLeft() != null) {
+            left = divider.getLeft().getWidth();
+        }
+        if (divider.getTop() != null) {
+            top = divider.getTop().getWidth();
+        }
+        if (divider.getRight() != null) {
+            right = divider.getRight().getWidth();
+        }
+        if (divider.getBottom() != null) {
+            bottom = divider.getBottom().getWidth();
+        }
         outRect.set(left, top, right, bottom);
     }
 
