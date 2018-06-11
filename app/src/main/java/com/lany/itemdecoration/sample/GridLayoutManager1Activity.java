@@ -54,12 +54,12 @@ public class GridLayoutManager1Activity extends BaseActivity {
                 Divider divider = null;
                 if ((itemPosition >= 1 && itemPosition <= 6) || itemPosition == 9 || itemPosition == 10) {
                     divider = new Divider.Builder()
-                            .setBottom(true, Color.BLACK, 6, 0, 0)
+                            .setBottom(Color.BLACK, 6)
                             .build();
                 } else if (itemPosition == 0 || itemPosition == 7 || itemPosition == 8) {
                     divider = new Divider.Builder()
-                            .setRight(true, Color.BLACK, 6, 0, 0)
-                            .setBottom(true, Color.BLACK, 6, 0, 0)
+                            .setRight(Color.BLACK, 6)
+                            .setBottom(Color.BLACK, 6)
                             .build();
                 } else if (itemPosition > 10 && itemPosition < 22) {
                     switch ((itemPosition - 10) % 4) {
@@ -67,13 +67,13 @@ public class GridLayoutManager1Activity extends BaseActivity {
                         case 2:
                         case 3:
                             divider = new Divider.Builder()
-                                    .setRight(true, Color.BLACK, 6, 0, 0)
-                                    .setBottom(true, Color.BLACK, 6, 0, 0)
+                                    .setRight( Color.BLACK, 6)
+                                    .setBottom( Color.BLACK, 6)
                                     .build();
                             break;
                         case 0:
                             divider = new Divider.Builder()
-                                    .setBottom(true, Color.BLACK, 6, 0, 0)
+                                    .setBottom(Color.BLACK, 6)
                                     .build();
                             break;
                         default:

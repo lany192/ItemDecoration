@@ -102,6 +102,17 @@ public class Divider {
         }
 
         /**
+         * 设置左边的边
+         *
+         * @param leftBorder 边
+         * @return 当前分割线
+         */
+        public Builder setLeft(Border leftBorder) {
+            this.left = leftBorder;
+            return this;
+        }
+
+        /**
          * 设置上边的边
          *
          * @param color 边的颜色
@@ -161,6 +172,18 @@ public class Divider {
          */
         public Builder setTop(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
             this.top = new Border(isHave, color, width, startPadding, endPadding);
+            return this;
+        }
+
+
+        /**
+         * 设置上边的边
+         *
+         * @param topBorder 边
+         * @return 当前分割线
+         */
+        public Builder setTop(Border topBorder) {
+            this.top = topBorder;
             return this;
         }
 
@@ -227,6 +250,18 @@ public class Divider {
             return this;
         }
 
+
+        /**
+         * 设置右边的边
+         *
+         * @param rightBorder 边
+         * @return 当前分割线
+         */
+        public Builder setRight(Border rightBorder) {
+            this.right = rightBorder;
+            return this;
+        }
+
         /**
          * 设置下边的边
          *
@@ -288,6 +323,18 @@ public class Divider {
          */
         public Builder setBottom(boolean isHave, @ColorInt int color, float width, float startPadding, float endPadding) {
             this.bottom = new Border(isHave, color, width, startPadding, endPadding);
+            return this;
+        }
+
+
+        /**
+         * 设置下边的边
+         *
+         * @param bottomBorder 边
+         * @return 当前分割线
+         */
+        public Builder setBottom(Border bottomBorder) {
+            this.bottom = bottomBorder;
             return this;
         }
 

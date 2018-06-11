@@ -55,9 +55,8 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     private void drawChildBottomHorizontal(View child, Canvas canvas, @ColorInt int color, int lineWidth, int startPadding, int endPadding) {
-        int leftPadding = 0;
-        int rightPadding = 0;
-
+        int leftPadding;
+        int rightPadding;
         if (startPadding <= 0) {
             //padding<0当作==0处理
             //上下左右默认分割线的两头都出头一个分割线的宽度，避免十字交叉的时候，交叉点是空白
@@ -83,8 +82,8 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     private void drawChildTopHorizontal(View child, Canvas canvas, @ColorInt int color, int lineWidth, int startPadding, int endPadding) {
-        int leftPadding = 0;
-        int rightPadding = 0;
+        int leftPadding;
+        int rightPadding;
 
         if (startPadding <= 0) {
             //padding<0当作==0处理
@@ -111,8 +110,8 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     private void drawChildLeftVertical(View child, Canvas canvas, @ColorInt int color, int lineWidth, int startPadding, int endPadding) {
-        int topPadding = 0;
-        int bottomPadding = 0;
+        int topPadding;
+        int bottomPadding;
 
         if (startPadding <= 0) {
             //padding<0当作==0处理
@@ -139,8 +138,8 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     private void drawChildRightVertical(View child, Canvas canvas, @ColorInt int color, int lineWidth, int startPadding, int endPadding) {
-        int topPadding = 0;
-        int bottomPadding = 0;
+        int topPadding;
+        int bottomPadding;
 
         if (startPadding <= 0) {
             //padding<0当作==0处理
@@ -189,9 +188,15 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
      * @return Divider
      */
     public Divider getDivider(int position) {
+        Border border = Border.builder()
+                .isExist(true)
+                .color(Color.TRANSPARENT)
+                .width(0.5f)
+                .build();
         //这个是默认的效果
-        return new Divider.Builder()
-                .setBottom(true, Color.TRANSPARENT, 0.5f, 0, 0)
+        return new Divider
+                .Builder()
+                .setBottom(border)
                 .build();
     }
 }

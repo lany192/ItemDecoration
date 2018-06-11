@@ -73,13 +73,22 @@ public class LinearItemDecoration extends ItemDecoration {
         if (orientation != RecyclerView.HORIZONTAL && orientation != RecyclerView.VERTICAL) {
             throw new IllegalArgumentException("invalid orientation:" + orientation);
         }
+        Border border = Border.builder()
+                .isExist(true)
+                .color(color)
+                .width(width)
+                .startPadding(padding)
+                .endPadding(padding)
+                .build();
         if (orientation != RecyclerView.VERTICAL) {
-            return new Divider.Builder()
-                    .setRight(color, width, padding, padding)
+            return new Divider
+                    .Builder()
+                    .setRight(border)
                     .build();
         } else {
-            return new Divider.Builder()
-                    .setBottom(color, width, padding, padding)
+            return new Divider
+                    .Builder()
+                    .setBottom(border)
                     .build();
         }
     }
