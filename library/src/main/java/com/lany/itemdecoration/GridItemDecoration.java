@@ -61,46 +61,56 @@ public class GridItemDecoration extends ItemDecoration {
     public Divider getDivider(int position) {
         checkSpanCount(spanCount);
         int remainder = position % spanCount;
+        Border border = Border.builder()
+                .color(color)
+                .width(width)
+                .build();
         if (isShowBorder) {//要显示四周的边
             if (remainder == 0) {
                 if (position < spanCount) {
-                    return new Divider.Builder()
-                            .setTop(color, width)
-                            .setLeft(color, width)
-                            .setRight(color, width)
-                            .setBottom(color, width)
+                    return new Divider
+                            .Builder()
+                            .setTop(border)
+                            .setLeft(border)
+                            .setRight(border)
+                            .setBottom(border)
                             .build();
                 } else {
-                    return new Divider.Builder()
-                            .setLeft(color, width)
-                            .setRight(color, width)
-                            .setBottom(color, width)
+                    return new Divider
+                            .Builder()
+                            .setLeft(border)
+                            .setRight(border)
+                            .setBottom(border)
                             .build();
                 }
             } else {
                 if (position < spanCount) {
-                    return new Divider.Builder()
-                            .setTop(color, width)
-                            .setRight(color, width)
-                            .setBottom(color, width)
+                    return new Divider
+                            .Builder()
+                            .setTop(border)
+                            .setRight(border)
+                            .setBottom(border)
                             .build();
                 } else {
-                    return new Divider.Builder()
-                            .setRight(color, width)
-                            .setBottom(color, width)
+                    return new Divider
+                            .Builder()
+                            .setRight(border)
+                            .setBottom(border)
                             .build();
                 }
             }
         } else {
             if (remainder == spanCount - 1) {
                 //最后一个只显示bottom
-                return new Divider.Builder()
-                        .setBottom(color, width)
+                return new Divider
+                        .Builder()
+                        .setBottom(border)
                         .build();
             } else {
-                return new Divider.Builder()
-                        .setRight(color, width)
-                        .setBottom(color, width)
+                return new Divider
+                        .Builder()
+                        .setRight(border)
+                        .setBottom(border)
                         .build();
             }
         }
