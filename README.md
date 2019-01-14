@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/lany192/ItemDecoration.svg)](https://jitpack.io/#lany192/ItemDecoration)
+
 # ItemDecoration
     
     这是一个简单易用的分割线库，可以使用默认值，也可以很方便的设置样式。目前只支持纯色分割线的设置，不支持Drawable
