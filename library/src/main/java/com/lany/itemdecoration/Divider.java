@@ -1,8 +1,8 @@
 package com.lany.itemdecoration;
 
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
 
+import androidx.annotation.ColorInt;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,9 +1,9 @@
 package com.lany.itemdecoration;
 
 import android.content.res.Resources;
-import android.support.annotation.ColorInt;
 import android.util.TypedValue;
 
+import androidx.annotation.ColorInt;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

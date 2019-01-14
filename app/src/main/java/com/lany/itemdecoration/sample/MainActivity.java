@@ -4,46 +4,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.lany.box.activity.BaseActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
-    }
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
-    protected boolean hasBackBtn() {
-        return false;
-    }
-
-    @Override
-    protected void init(Bundle bundle) {
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button:
-                startActivity(new Intent(self, LinearLayoutManagerActivity.class));
+                startActivity(new Intent(this, LinearLayoutManagerActivity.class));
                 break;
             case R.id.button2:
-                startActivity(new Intent(self, GridLayoutManagerActivity.class));
+                startActivity(new Intent(this, GridLayoutManagerActivity.class));
                 break;
             case R.id.button3:
-                startActivity(new Intent(self, GridLayoutManager1Activity.class));
+                startActivity(new Intent(this, GridLayoutManager1Activity.class));
                 break;
             case R.id.button4:
-                startActivity(new Intent(self, GridLayoutManager2Activity.class));
+                startActivity(new Intent(this, GridLayoutManager2Activity.class));
                 break;
             case R.id.button5:
-                startActivity(new Intent(self, LinearLayoutManager2Activity.class));
+                startActivity(new Intent(this, LinearLayoutManager2Activity.class));
                 break;
             default:
                 break;
         }
-
     }
 }

@@ -1,7 +1,8 @@
 package com.lany.itemdecoration;
 
-import android.support.annotation.ColorInt;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.ColorInt;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 适用于LinearLayoutManager
