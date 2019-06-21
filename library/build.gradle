@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 100
         versionName "1.0.0"
     }
@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    compileOnly 'org.projectlombok:lombok:1.18.4'
-    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+    compileOnly 'com.android.support:recyclerview-v7:28.0.0'
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
 }

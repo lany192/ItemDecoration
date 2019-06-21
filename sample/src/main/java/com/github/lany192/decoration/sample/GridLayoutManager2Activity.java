@@ -1,0 +1,40 @@
+package com.github.lany192.decoration.sample;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.github.lany192.decoration.GridDecoration;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GridLayoutManager2Activity  extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        List<String> items = new ArrayList<>();
+        for (int i = 0; i < 77; i++) {
+            items.add("item" + i);
+        }
+        GridLayoutManager manager = new GridLayoutManager(this, 4);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_simple, items) {
+
+            @Override
+            protected void convert(BaseViewHolder helper, String item) {
+                helper.setText(R.id.textView, item);
+            }
+        });
+        recyclerView.addItemDecoration(new GridDecoration(manager).setShowBorder(true).setColor(Color.RED).setWidth(2));
+    }
+
+}
