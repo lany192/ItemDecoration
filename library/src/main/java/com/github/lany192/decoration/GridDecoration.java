@@ -1,8 +1,8 @@
 package com.github.lany192.decoration;
 
 
-import android.support.annotation.ColorInt;
-import android.support.v7.widget.GridLayoutManager;
+import androidx.annotation.ColorInt;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 /**
  * 适用于GridLayoutManager
