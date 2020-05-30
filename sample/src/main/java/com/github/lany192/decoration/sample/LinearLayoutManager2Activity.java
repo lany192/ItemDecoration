@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.github.lany192.decoration.LinearDecoration;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.github.lany192.decoration.LinearItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ public class LinearLayoutManager2Activity extends AppCompatActivity {
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(manager);
-        recyclerView.addItemDecoration(new LinearDecoration(LinearLayoutManager.HORIZONTAL)
+        recyclerView.addItemDecoration(new LinearItemDecoration(LinearLayoutManager.HORIZONTAL)
                 .setColor(Color.RED)
                 .setWidth(4));
         recyclerView.setAdapter(new BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_simple_horizontal, items) {

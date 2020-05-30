@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * 适用于LinearLayoutManager
  */
-public class LinearDecoration extends ItemDecoration {
+public class LinearItemDecoration extends ItemDecoration {
     /**
      * 分割线宽度，默认是1dp
      */
@@ -29,42 +29,42 @@ public class LinearDecoration extends ItemDecoration {
     private int padding;
 
 
-    public LinearDecoration() {
+    public LinearItemDecoration() {
         orientation = RecyclerView.VERTICAL;
     }
 
-    public LinearDecoration(@RecyclerView.Orientation int orientation) {
+    public LinearItemDecoration(@RecyclerView.Orientation int orientation) {
         this.orientation = orientation;
     }
 
-    public LinearDecoration(int width, @ColorInt int color, @RecyclerView.Orientation int orientation) {
+    public LinearItemDecoration(int width, @ColorInt int color, @RecyclerView.Orientation int orientation) {
         this.width = width;
         this.color = color;
         this.orientation = orientation;
     }
 
-    public LinearDecoration(int width, @ColorInt int color) {
+    public LinearItemDecoration(int width, @ColorInt int color) {
         this.width = width;
         this.color = color;
         this.orientation = RecyclerView.VERTICAL;
     }
 
-    public LinearDecoration setWidth(int width) {
+    public LinearItemDecoration setWidth(int width) {
         this.width = width;
         return this;
     }
 
-    public LinearDecoration setPadding(int padding) {
+    public LinearItemDecoration setPadding(int padding) {
         this.padding = padding;
         return this;
     }
 
-    public LinearDecoration setColor(@ColorInt int color) {
+    public LinearItemDecoration setColor(@ColorInt int color) {
         this.color = color;
         return this;
     }
 
-    public LinearDecoration setOrientation(@RecyclerView.Orientation int orientation) {
+    public LinearItemDecoration setOrientation(@RecyclerView.Orientation int orientation) {
         this.orientation = orientation;
         return this;
     }

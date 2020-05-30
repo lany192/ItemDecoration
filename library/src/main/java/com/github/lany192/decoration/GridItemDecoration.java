@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 /**
  * 适用于GridLayoutManager
  */
-public class GridDecoration extends ItemDecoration {
+public class GridItemDecoration extends ItemDecoration {
     private int spanCount;
     private int width = 1;
     /**
@@ -21,39 +21,39 @@ public class GridDecoration extends ItemDecoration {
      */
     private boolean isShowBorder = false;
 
-    public GridDecoration() {
+    public GridItemDecoration() {
 
     }
 
-    public GridDecoration(int spanCount, int width, int color) {
+    public GridItemDecoration(int spanCount, int width, int color) {
         this.spanCount = spanCount;
         checkSpanCount(spanCount);
         this.width = width;
         this.color = color;
     }
 
-    public GridDecoration(GridLayoutManager manager) {
+    public GridItemDecoration(GridLayoutManager manager) {
         this.spanCount = manager.getSpanCount();
         checkSpanCount(spanCount);
     }
 
-    public GridDecoration setSpanCount(int spanCount) {
+    public GridItemDecoration setSpanCount(int spanCount) {
         this.spanCount = spanCount;
         checkSpanCount(spanCount);
         return this;
     }
 
-    public GridDecoration setWidth(int width) {
+    public GridItemDecoration setWidth(int width) {
         this.width = width;
         return this;
     }
 
-    public GridDecoration setColor(@ColorInt int color) {
+    public GridItemDecoration setColor(@ColorInt int color) {
         this.color = color;
         return this;
     }
 
-    public GridDecoration setShowBorder(boolean isShowBorder) {
+    public GridItemDecoration setShowBorder(boolean isShowBorder) {
         this.isShowBorder = isShowBorder;
         return this;
     }
