@@ -74,12 +74,7 @@ public class LinearItemDecoration extends ItemDecoration {
         if (orientation != RecyclerView.HORIZONTAL && orientation != RecyclerView.VERTICAL) {
             throw new IllegalArgumentException("invalid orientation:" + orientation);
         }
-        Border border = Border.builder()
-                .color(color)
-                .width(width)
-                .startPadding(padding)
-                .endPadding(padding)
-                .build();
+        Border border = new Border(color, width, padding, padding);
         if (orientation != RecyclerView.VERTICAL) {
             return new Divider
                     .Builder()

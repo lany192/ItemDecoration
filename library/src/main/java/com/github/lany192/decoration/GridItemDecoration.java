@@ -62,10 +62,7 @@ public class GridItemDecoration extends ItemDecoration {
     public Divider getDivider(int position) {
         checkSpanCount(spanCount);
         int remainder = position % spanCount;
-        Border border = Border.builder()
-                .color(color)
-                .width(width)
-                .build();
+        Border border = new Border(color, width);
         if (isShowBorder) {//要显示四周的边
             if (remainder == 0) {
                 if (position < spanCount) {

@@ -205,10 +205,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
      * @return Divider
      */
     public Divider getDivider(int position) {
-        Border border = Border.builder()
-                .color(Color.TRANSPARENT)
-                .width(0.5f)
-                .build();
+        Border border = new Border(Color.TRANSPARENT, 0.5f);
         //这个是默认的效果
         return new Divider
                 .Builder()
