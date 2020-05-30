@@ -53,28 +53,18 @@ public class GridLayoutManager1Activity extends AppCompatActivity {
             public Divider getDivider(int itemPosition) {
                 Divider divider = null;
                 if ((itemPosition >= 1 && itemPosition <= 6) || itemPosition == 9 || itemPosition == 10) {
-                    divider = new Divider.Builder()
-                            .setBottom(Color.BLACK, 6)
-                            .build();
+                    divider = new Divider().setBottom(Color.BLACK, 6);
                 } else if (itemPosition == 0 || itemPosition == 7 || itemPosition == 8) {
-                    divider = new Divider.Builder()
-                            .setRight(Color.BLACK, 6)
-                            .setBottom(Color.BLACK, 6)
-                            .build();
+                    divider = new Divider().setRight(Color.BLACK, 6).setBottom(Color.BLACK, 6);
                 } else if (itemPosition > 10 && itemPosition < 22) {
                     switch ((itemPosition - 10) % 4) {
                         case 1:
                         case 2:
                         case 3:
-                            divider = new Divider.Builder()
-                                    .setRight(Color.BLACK, 6)
-                                    .setBottom(Color.BLACK, 6)
-                                    .build();
+                            divider = new Divider().setRight(Color.BLACK, 6).setBottom(Color.BLACK, 6);
                             break;
                         case 0:
-                            divider = new Divider.Builder()
-                                    .setBottom(Color.BLACK, 6)
-                                    .build();
+                            divider = new Divider().setBottom(Color.BLACK, 6);
                             break;
                         default:
                             break;

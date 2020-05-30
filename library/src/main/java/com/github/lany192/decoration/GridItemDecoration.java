@@ -66,50 +66,32 @@ public class GridItemDecoration extends ItemDecoration {
         if (isShowBorder) {//要显示四周的边
             if (remainder == 0) {
                 if (position < spanCount) {
-                    return new Divider
-                            .Builder()
+                    return new Divider()
                             .setTop(border)
                             .setLeft(border)
                             .setRight(border)
-                            .setBottom(border)
-                            .build();
+                            .setBottom(border);
                 } else {
-                    return new Divider
-                            .Builder()
+                    return new Divider()
                             .setLeft(border)
                             .setRight(border)
-                            .setBottom(border)
-                            .build();
+                            .setBottom(border);
                 }
             } else {
                 if (position < spanCount) {
-                    return new Divider
-                            .Builder()
-                            .setTop(border)
+                    return new Divider().setTop(border)
                             .setRight(border)
-                            .setBottom(border)
-                            .build();
+                            .setBottom(border);
                 } else {
-                    return new Divider
-                            .Builder()
-                            .setRight(border)
-                            .setBottom(border)
-                            .build();
+                    return new Divider().setRight(border).setBottom(border);
                 }
             }
         } else {
             if (remainder == spanCount - 1) {
                 //最后一个只显示bottom
-                return new Divider
-                        .Builder()
-                        .setBottom(border)
-                        .build();
+                return new Divider().setBottom(border);
             } else {
-                return new Divider
-                        .Builder()
-                        .setRight(border)
-                        .setBottom(border)
-                        .build();
+                return new Divider().setRight(border).setBottom(border);
             }
         }
     }

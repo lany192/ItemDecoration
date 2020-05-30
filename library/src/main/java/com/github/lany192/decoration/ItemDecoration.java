@@ -27,7 +27,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
             int itemPosition = ((RecyclerView.LayoutParams) child.getLayoutParams()).getViewLayoutPosition();
             Divider divider = getDivider(itemPosition);
             if (divider == null) {
-                divider = new Divider.Builder().build();
+                divider = new Divider();
             }
             Border leftBorder = divider.getLeft();
             if (leftBorder != null) {
@@ -177,7 +177,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
         int itemPosition = ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
         Divider divider = getDivider(itemPosition);
         if (divider == null) {
-            divider = new Divider.Builder().build();
+            divider = new Divider();
         }
         int left = 0;
         int top = 0;
@@ -207,10 +207,7 @@ public class ItemDecoration extends RecyclerView.ItemDecoration {
     public Divider getDivider(int position) {
         Border border = new Border(Color.TRANSPARENT, 0.5f);
         //这个是默认的效果
-        return new Divider
-                .Builder()
-                .setBottom(border)
-                .build();
+        return new Divider().setBottom(border);
     }
 }
 

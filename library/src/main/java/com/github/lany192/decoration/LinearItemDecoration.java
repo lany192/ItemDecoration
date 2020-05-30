@@ -76,15 +76,9 @@ public class LinearItemDecoration extends ItemDecoration {
         }
         Border border = new Border(color, width, padding, padding);
         if (orientation != RecyclerView.VERTICAL) {
-            return new Divider
-                    .Builder()
-                    .setRight(border)
-                    .build();
+            return new Divider().setRight(border);
         } else {
-            return new Divider
-                    .Builder()
-                    .setBottom(border)
-                    .build();
+            return new Divider().setBottom(border);
         }
     }
 }

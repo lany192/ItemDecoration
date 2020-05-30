@@ -35,35 +35,35 @@ public class LinearLayoutManagerActivity extends AppCompatActivity {
             public Divider getDivider(int itemPosition) {
                 switch (itemPosition) {
                     case 0:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.YELLOW, 2)
-                                .build();
+                                ;
                     case 1:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.BLACK, 2)
-                                .build();
+                                ;
                     case 2:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.RED, 4)
-                                .build();
+                                ;
                     case 3:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.RED, 4, 16, 16)
-                                .build();
+                                ;
                     case 4:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.RED, 2, 16, 32)
-                                .build();
+                                ;
                     case 5:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setBottom(Color.RED, 2)
-                                .build();
+                                ;
                     case 6:
-                        return new Divider.Builder()
+                        return new Divider()
                                 .setLeft(Color.RED, 3)
                                 .setRight(Color.RED, 8)
                                 .setBottom(Color.RED, 6)
-                                .build();
+                                ;
                     default:
                         return super.getDivider(itemPosition);
                 }
