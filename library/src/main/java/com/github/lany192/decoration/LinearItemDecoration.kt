@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 /**
  * 适用于LinearLayoutManager
  */
-class LinearItemDecoration : ItemDecoration {
+public class LinearItemDecoration : ItemDecoration {
     /**
      * 分割线宽度，默认是1dp
      */

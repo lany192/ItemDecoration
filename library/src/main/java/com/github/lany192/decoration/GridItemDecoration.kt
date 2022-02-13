@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 /**
  * 适用于GridLayoutManager
  */
-class GridItemDecoration : ItemDecoration {
+public class GridItemDecoration : ItemDecoration {
     private var spanCount = 0
     private var width = 1
 

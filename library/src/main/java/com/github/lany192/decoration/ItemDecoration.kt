@@ -8,7 +8,7 @@ import android.view.View
 import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
 
-open class ItemDecoration : RecyclerView.ItemDecoration() {
+public open class ItemDecoration : RecyclerView.ItemDecoration() {
     private val mPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     override fun onDraw(
         canvas: Canvas,
