@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.github.lany192.decoration.LinearItemDecoration
+import com.github.lany192.decoration.LinearDecoration
 
 class LinearLayoutManager2Activity : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class LinearLayoutManager2Activity : AppCompatActivity() {
         manager.orientation = LinearLayoutManager.HORIZONTAL
         recyclerView.layoutManager = manager
         recyclerView.addItemDecoration(
-            LinearItemDecoration(LinearLayoutManager.HORIZONTAL)
+            LinearDecoration(LinearLayoutManager.HORIZONTAL)
                 .setColor(Color.RED)
                 .setWidth(4)
         )

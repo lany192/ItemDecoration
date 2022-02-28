@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.github.lany192.decoration.GridItemDecoration;
+import com.github.lany192.decoration.GridDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class GridLayoutManager2Activity  extends AppCompatActivity {
                 helper.setText(R.id.textView, item);
             }
         });
-        recyclerView.addItemDecoration(new GridItemDecoration(manager).setShowBorder(true).setColor(Color.RED).setWidth(2));
+        recyclerView.addItemDecoration(new GridDecoration(manager).setShowBorder(true).setColor(Color.RED).setWidth(2));
     }
 
 }

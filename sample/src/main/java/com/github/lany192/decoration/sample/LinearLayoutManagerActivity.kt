@@ -25,15 +25,15 @@ class LinearLayoutManagerActivity : AppCompatActivity() {
 
             override fun getDivider(position: Int): Divider? {
                 return when (position) {
-                    0 -> Divider().setBottom(Color.YELLOW, 2f)
-                    1 -> Divider().setBottom(Color.BLACK, 2f)
-                    2 -> Divider().setBottom(Color.RED, 4f)
-                    3 -> Divider().setBottom(Color.RED, 4f, 16f, 16f)
-                    4 -> Divider().setBottom(Color.RED, 2f, 16f, 32f)
-                    5 -> Divider().setBottom(Color.RED, 2f)
-                    6 -> Divider().setLeft(Color.RED, 3f)
+                    0 -> Divider.Builder().setBottom(Color.YELLOW, 2f).build()
+                    1 -> Divider.Builder().setBottom(Color.BLACK, 2f).build()
+                    2 -> Divider.Builder().setBottom(Color.RED, 4f).build()
+                    3 -> Divider.Builder().setBottom(Color.RED, 4f, 16f, 16f).build()
+                    4 -> Divider.Builder().setBottom(Color.RED, 2f, 16f, 32f).build()
+                    5 -> Divider.Builder().setBottom(Color.RED, 2f).build()
+                    6 -> Divider.Builder().setLeft(Color.RED, 3f)
                         .setRight(Color.RED, 8f)
-                        .setBottom(Color.RED, 6f)
+                        .setBottom(Color.RED, 6f).build()
                     else -> super.getDivider(position)
                 }
             }
